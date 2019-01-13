@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         //接收两个控件的内容(getText())，并转换成字符串(toString())，把空格去掉(trim())
         String usernString = username.getText().toString().trim();
         String passwordString = password.getText().toString().trim();
+
+        //打印接收到的数据
+        Log.e("测试","username="+usernString+",password="+passwordString);
 
         //模拟用户登录
         if(usernString.equals("mmm") && passwordString.equals("123")){
