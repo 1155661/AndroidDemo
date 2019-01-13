@@ -1,15 +1,21 @@
 package exampe.myapplication;
 
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
+    //用于存储图片的数组
+    Drawable[] image = new Drawable[3];
+
+    //计算图片
+    int index = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -17,39 +23,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //取得按钮对象
-        Button b1 = (Button) findViewById(R.id.id_buy);
+        //存储图片
+        image[0] = getDrawable(R.drawable.gamersky_01origin_01_201711102042848);
+        image[1] = getDrawable(R.drawable.gamersky_01origin_01_201712231824635);
+        image[2] = getDrawable(R.drawable.gamersky_01origin_01_201811111229284);
 
-        //设置监听器
-        b1.setOnClickListener(new View.OnClickListener(){
+        //初始化图片
+        ImageView img = (ImageView) findViewById(R.id.imageView);
+        img.setImageDrawable(image[index]);
 
+        Button btn = (Button) findViewById(R.id.button3);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //方法名没有重复的现象可以直接调用
-                onBuy();
-                //如果方法名冲突则加上前缀
-//                MainActivity.this.onBuy();
+                onImg();
             }
+
         });
-
     }
 
-    public void onBuy(){
-        EditText editText = (EditText) findViewById(R.id.id_count);
-        String amout = editText.getText().toString();
-        String massage = "购买"+ amout +"件商品";
+    private void onImg() {
 
-        Toast.makeText(this,massage,Toast.LENGTH_SHORT).show();
+        index++;
+
+        if(index > 2){ index = 0;}
+        //获取图片控件对象
+        ImageView img = (ImageView) findViewById(R.id.imageView);
+        img.setImageDrawable(image[index]);
+
+        img.setImageDrawable(image[index]);
     }
 
-    private class MyListener implements View.OnClickListener{
 
-        @Override
-        public void onClick(View v) {
-
-
-
-        }
-    }
 }

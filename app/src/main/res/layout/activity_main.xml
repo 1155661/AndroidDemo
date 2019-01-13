@@ -8,18 +8,15 @@
     tools:context="exampe.myapplication.MainActivity">
 
 
-    <EditText
-        android:id="@+id/id_count"
-        android:layout_width="match_parent"
-        android:layout_height="60sp"
-        android:ems="10"
-        android:hint="商品数量"
-        android:inputType="textPersonName" />
-
     <Button
-        android:id="@+id/id_buy"
+        android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="购买"
-        android:textSize="24sp" />
+        android:text="下一张"
+        android:textSize="21sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
