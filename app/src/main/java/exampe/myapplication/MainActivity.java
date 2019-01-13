@@ -18,25 +18,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //取得按钮对象
-        Button button = (Button) findViewById(R.id.id_buy);
+        Button b1 = (Button) findViewById(R.id.id_buy);
 
-        //创建一个监听器
-        MyListener listener = new MyListener();
+        //设置监听器
+        b1.setOnClickListener(new View.OnClickListener(){
 
-        //给按钮设置一个监听器，当按钮被点击时，系统将调用listener.onClick()方法处理
-        button.setOnClickListener(listener);
+            @Override
+            public void onClick(View v) {
+
+                //方法名没有重复的现象可以直接调用
+                onBuy();
+                //如果方法名冲突则加上前缀
+//                MainActivity.this.onBuy();
+            }
+        });
+
     }
 
-    //在View类里定义了一个内部接口：OnClickListener
+    public void onBuy(){
+        EditText editText = (EditText) findViewById(R.id.id_count);
+        String amout = editText.getText().toString();
+        String massage = "购买"+ amout +"件商品";
+
+        Toast.makeText(this,massage,Toast.LENGTH_SHORT).show();
+    }
+
     private class MyListener implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
-            EditText edit = (EditText) MainActivity.this.findViewById(R.id.id_count);
-            String amount = edit.getText().toString();
-            String message = "购买" + amount + "件商品";
 
-            Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
+
 
         }
     }
