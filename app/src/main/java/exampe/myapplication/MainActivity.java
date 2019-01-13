@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         String usernString = username.getText().toString().trim();
         String passwordString = password.getText().toString().trim();
 
+        //模拟用户登录
         if(usernString.equals("mmm") && passwordString.equals("123")){
             Toast.makeText(this,"登录成功",Toast.LENGTH_SHORT).show();
         }else {
