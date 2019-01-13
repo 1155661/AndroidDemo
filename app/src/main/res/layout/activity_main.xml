@@ -9,25 +9,17 @@
 
 
     <EditText
-        android:id="@+id/id_name"
+        android:id="@+id/id_count"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60sp"
         android:ems="10"
-        android:hint="请输入用户名"
+        android:hint="商品数量"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/id_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/id_buy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onLogin"
-        android:text="登录" />
+        android:text="购买"
+        android:textSize="24sp" />
 </LinearLayout>
