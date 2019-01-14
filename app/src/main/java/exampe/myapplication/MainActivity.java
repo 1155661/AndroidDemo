@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //需要实现的方法
                 onImg();
             }
 
